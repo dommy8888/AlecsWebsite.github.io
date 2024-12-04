@@ -1,0 +1,320 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    padding: 5px;
+    line-height: 1.4;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Changed to 100vh to fit the viewport height */
+    margin: 0;
+    overflow-y: hidden; /* Prevent scrolling on body */
+}
+
+.container {
+    padding: 10px;
+    margin: 0 auto;
+    text-align: center;
+    max-width: 1000px;
+    max-height: 100vh; /* Set max height to viewport height */
+    overflow-y: auto; /* Enable scrolling within the container */
+}
+
+h1 {
+    font-size: 3vw; /* Adjusted to fit better */
+    color: black;
+    font-weight: bold;
+    margin: 10px 0;
+    position: relative;
+    z-index: 1;
+}
+
+p, ul, ol {
+    margin-bottom: 10px;
+    font-size: 1rem; /* Adjusted to fit better */
+    line-height: 1.2;
+    text-align: justify;
+}
+
+ul, ol {
+    padding-left: 10px;
+}
+
+h2, h3 {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    font-size: 1.2rem; /* Adjusted to fit better */
+    margin-bottom: 5px;
+}
+
+h3 {
+    font-size: 1rem; /* Adjusted to fit better */
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.signature {
+    margin-top: 10px;
+    text-align: center;
+    overflow-y: auto;
+    max-height: 70vh;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 10px auto;
+    width: 90%;
+    background-color: #f9f9f9;
+}
+
+.signature-line {
+    border-top: 1px solid #333;
+    width: 60%;
+    margin: 5px auto;
+}
+
+.signature-label {
+    margin-top: 5px;
+    font-size: 1rem; /* Adjusted to fit better */
+    text-align: center;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 6px 12px;
+    font-size: 12px; /* Adjusted to fit better */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.footnote {
+    font-size: 10px; /* Adjusted to fit better */
+    color: #777;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.date {
+    font-size: 12px; /* Adjusted to fit better */
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.contract-text {
+    font-size: 12px; /* Adjusted to fit better */
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+        margin: 5px;
+    }
+
+    h1 {
+        font-size: 1.2rem; /* Adjusted to fit better */
+    }
+
+    h2 {
+        font-size: 0.9rem; /* Adjusted to fit better */
+    }
+
+    h3 {
+        font-size: 0.8rem; /* Adjusted to fit better */
+    }
+
+    .signature-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .signature-section div {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    p.introduction {
+        font-size: 0.8rem; /* Adjusted to fit better */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
+    }
+
+    .container {
+        padding: 5px;
+        margin: 0;
+    }
+
+    h1 {
+        font-size: 1rem; /* Adjusted to fit better */
+    }
+
+    h2 {
+        font-size: 0.8rem; /* Adjusted to fit better */
+    }
+
+    p {
+        font-size: 0.7rem; /* Adjusted to fit better */
+    }
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    overflow-y: hidden; /* Prevent scrolling on body */
+}
+.contract-title {
+    font-size: 3em;
+    font-family: 'Georgia', serif;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.contract-subtitle {
+    font-size: 1.2em;
+    font-family: 'Georgia', serif;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+.seal {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.seal img {
+    display: inline-block;
+    width: 120px; /* Adjust the size as needed */
+    opacity: 0.9; /* Slight transparency for digital use */
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3)); /* Add a shadow for realism */
+}
+.contract-footer {
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 30px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+.contract::before {
+    content: "Confidential";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5em;
+    color: rgba(200, 200, 200, 0.2);
+    z-index: 0;
+    pointer-events: none; /* Prevent interaction with the watermark */
+}
+.contract {
+    border: 2px solid black;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: #f9f9f9; /* Light paper-like color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle 3D effect */
+}
+.divider {
+    border: none;
+    border-top: 2px solid #333;
+    margin: 20px 0;
+    width: 90%;
+}
+.intro:first-letter {
+    font-size: 2.5em;
+    font-family: 'Garamond', serif;
+    font-weight: bold;
+    float: left;
+    line-height: 1; /* Align the letter with the text's baseline */
+    margin-right: 10px; 
+    margin-right: 5px;
+    vertical-align: bottom;
+    color: #333;
+}
+.embossed-text {
+    text-align: center;
+    font-size: 2.5em;
+    font-family: 'Georgia', serif;
+    color: #333;
+    text-shadow: 1px 1px 0 #bbb, -1px -1px 0 #fff;
+}
+.signature {
+    text-align: left;
+    font-family: 'Arial', sans-serif;
+    font-size: 1.2em;
+    color: #333;
+    margin-top: 30px;
+    border: 2px solid rgb(0, 0, 0);
+    padding: 20px;
+}
+
+.signature-section {
+    margin-bottom: 30px;
+}
+
+.signature-name {
+    font-family: 'Pinyon Script', cursive; /* Cursive font */
+    font-size: 1.4em; /* Adjusted font size */
+    color: #333;
+    display: block;
+    text-align: center; /* Center the signature text */
+    position: relative;
+    z-index: 1; /* Ensure text is above the line */
+}
+
+.signature-line {
+    position: relative;
+    width: 100%; /* Full width of the container */
+    height: 2em; /* Height for the line */
+    margin-top: 10px;
+    text-align: center; /* Ensure the line is centered */
+}
+
+.signature-line::before {
+    content: '____________________'; /* Signature line */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50%;
+    font-size: 1.2em; /* Line size */
+    color: #555;
+    z-index: 0; /* Ensure line is below the text */
+}

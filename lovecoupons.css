@@ -1,0 +1,106 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f6e3e3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  /* Container for the coupons */
+  .coupon-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  /* Individual Coupon Styles */
+  .coupon {
+    background-color: #f8d7db;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    height: 180px;
+    position: relative;
+    font-family: 'Georgia', serif;
+    overflow: hidden;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    border: 3px dashed #e6007f;  /* Dashed border to mimic a ticket */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .coupon:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Coupon Header */
+  .coupon-header {
+    background-color: #ffc0cb;
+    padding: 8px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #4e1b1b;
+    text-transform: uppercase;
+  }
+  
+  /* Coupon Body */
+  .coupon-body {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin: 10px 0;
+    color: #4e1b1b;
+  }
+  
+  .coupon-body .coupon-text {
+    font-weight: bold;
+    color: #e6007f;
+  }
+  
+  /* Coupon Footer */
+  .coupon-footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #8f2d5a;
+    font-style: italic;
+    margin-top: auto;
+  }
+  
+  /* Adding a tear effect to the edges to resemble ticket perforations */
+  .coupon::before,
+  .coupon::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #e6007f;
+    border-radius: 50%;
+    top: -10px;
+    left: 10px;
+    right: 10px;
+  }
+  
+  .coupon::after {
+    top: auto;
+    bottom: -10px;
+  }
+  
+  /* Add some spacing between coupons */
+  .coupon + .coupon {
+    margin-top: 20px;
+  }
+  
+  

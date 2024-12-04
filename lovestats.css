@@ -1,0 +1,76 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set the background color to verde green */
+body {
+    background-color: #4CAF50; /* Verde Green */
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Main container */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+}
+
+/* Title for sections */
+h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Timer sections */
+.time-together, .birthday-timers {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Timer text */
+#time-together, #dom-birthday-countdown, #alec-birthday-countdown {
+    font-size: 1.2em;
+    font-weight: normal;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+
+    #time-together, #dom-birthday-countdown, #alec-birthday-countdown {
+        font-size: 1em;
+        max-width: 90%;
+    }
+}

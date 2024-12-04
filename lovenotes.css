@@ -1,0 +1,85 @@
+/* Global Settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Garamond', serif;
+}
+
+/* Body Styling */
+body {
+    background: #f4e1d2; /* Pale cream color */
+    color: #3b2f2a; /* Rich brown text */
+    font-size: 18px;
+    line-height: 1.6;
+    padding: 50px;
+    font-family: 'Georgia', serif;
+}
+
+/* Container for notes */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #f7f1e1; /* Warm beige */
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-image: url('https://www.transparenttextures.com/patterns/embossed-paper.png'); /* Subtle texture */
+}
+
+/* Styling individual notes */
+.note {
+    background: #fff8e1; /* Light golden background */
+    margin: 15px 0;
+    padding: 20px;
+    border: 1px solid #d1a84d; /* Gold color */
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+    color: #3b2f2a;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect on notes */
+.note:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Decorative Borders */
+.note::before, .note::after {
+    content: '';
+    display: block;
+    border-top: 1px solid #d1a84d;
+    margin: 15px 0;
+}
+
+/* Adding a decorative font style for emphasis */
+.note p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+}
+
+/* Background and Title */
+h1 {
+    text-align: center;
+    font-size: 36px;
+    color: #d1a84d; /* Golden title */
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+    font-family: 'Cinzel', serif; /* Elegant serif font for headings */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Styling for Mobile Devices */
+@media only screen and (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .note {
+        font-size: 18px;
+        padding: 15px;
+    }
+}

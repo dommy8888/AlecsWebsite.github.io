@@ -1,0 +1,680 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern, clean font */
+    line-height: 1.6; /* Improved line height for better readability */
+    scroll-behavior: smooth; /* Smooth scrolling for a more seamless user experience */
+    background-color: #f4f4f9; /* Soft, neutral background color for a modern feel */
+}
+
+/* Global Text Styling */
+* {
+    box-sizing: border-box; /* Ensures padding and border do not affect element width/height */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', Arial, sans-serif; /* A modern, clean typeface for headings */
+    font-weight: 600; /* Bold, yet not too heavy for modern aesthetics */
+    letter-spacing: 1px; /* Adds spacing between characters for a more refined look */
+    color: #333; /* Dark grey for subtle contrast */
+    margin-top: 0;
+}
+
+p {
+    font-size: 1.1em; /* Slightly larger text for better readability */
+    color: #555; /* Soft grey text for better contrast without being too harsh */
+    margin-bottom: 1em;
+}
+
+/* Link Styling */
+a {
+    text-decoration: none;
+    color: #2c343a; /* Modern blue color */
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hover effect for links */
+a:hover {
+    color: #374147; /* Slightly darker blue on hover */
+}
+
+/* Responsive design for text size */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+    
+    p {
+        font-size: 1em; /* Adjust text size for smaller screens */
+    }
+}
+.hero-heading {
+    text-align: center; /* Center the heading */
+    font-size: 5em; /* Large font size for prominence */
+    color: #333; /* Dark grey color for a modern look */
+    font-weight: 700; /* Bold weight for emphasis */
+    font-family: 'Poppins', sans-serif; /* Modern, clean font */
+    letter-spacing: 2px; /* Adds spacing between letters for a refined, open look */
+    text-transform: uppercase; /* All caps for a more sophisticated appearance */
+    margin-top: 0; /* Remove top margin */
+    margin-bottom: 0.5em; /* Small bottom margin for spacing */
+    line-height: 1.2; /* Adjust line-height for readability */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for a modern interactive touch */
+.hero-heading:hover {
+    color: #3498db; /* Change color on hover for interactivity */
+    transform: scale(1.05); /* Slight scaling effect on hover */
+}
+/* Greeting Message styling */
+.greeting-message {
+    font-size: 2.5rem; /* Slightly larger for prominence */
+    color: #333; /* Dark gray color for contrast */
+    font-weight: 600; /* Semi-bold for a modern touch */
+    letter-spacing: 1px; /* Adds space between letters for clarity */
+    text-align: center;
+    margin-bottom: 20px; /* Space between greeting and love message */
+    opacity: 0; /* Initially hidden for fade-in animation */
+    animation: fadeIn 1s ease-in-out forwards; /* Smooth fade-in animation */
+}
+
+/* Love Message styling */
+.love-message {
+    font-size: 3rem; /* Larger text for emphasis */
+    color: #a11609; /* Soft coral color for a modern, warm feel */
+    font-weight: 700; /* Bold to stand out */
+    text-align: center;
+    opacity: 0; /* Initially hidden for fade-in animation */
+    animation: fadeIn 1.5s ease-in-out forwards; /* Delayed fade-in animation */
+    transition: transform 0.3s ease; /* Smooth transform effect on hover */
+}
+
+/* Animation for fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Hover effect for love message */
+.love-message:hover {
+    transform: scale(1.1); /* Slightly increases size on hover */
+}
+
+/* Optional styling for responsiveness */
+@media screen and (max-width: 768px) {
+    .greeting-message {
+        font-size: 2rem; /* Smaller font size on smaller screens */
+    }
+
+    .love-message {
+        font-size: 2.5rem; /* Adjust size for mobile devices */
+    }
+}
+
+header {
+    position: fixed;
+    top: 0; /* Ensures it stays at the top */
+    width: 100%;
+    background: rgba(0, 0, 0, 0.85); /* Slightly darker for better contrast */
+    color: white;
+    padding: 1.5em 0; /* Increased padding for a more spacious and refined look */
+    text-align: center;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    backdrop-filter: blur(10px); /* Adds a blurred background effect */
+}
+
+/* Header Text */
+header h1 {
+    font-size: 2em; /* Larger font size for prominent visibility */
+    font-weight: 600; /* Medium font weight for a modern look */
+    letter-spacing: 1px; /* Slight spacing for clarity */
+    text-transform: uppercase; /* Adds a sophisticated touch */
+    margin: 0;
+    color: #f0f0f0; /* Light color to contrast with background */
+}
+
+/* Subheading or tagline (optional) */
+header p {
+    font-size: 1.2em; /* Slightly smaller but still prominent */
+    font-weight: 400; /* Regular weight for contrast with the heading */
+    margin-top: 0.5em;
+    color: #d0d0d0; /* Soft grey for a refined feel */
+}
+nav {
+    background-color: #2d2d2d; /* Dark, sophisticated background */
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Navigation Menu List */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Center the items */
+    align-items: center;
+}
+
+/* Navigation Menu Items */
+nav ul li {
+    margin: 0 20px; /* Ample space between items */
+}
+
+/* Links inside Menu Items */
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em; /* Modern font size */
+    font-weight: 500; /* Slightly bolder text for emphasis */
+    transition: all 0.3s ease; /* Smooth transition effect */
+    position: relative; /* Needed for underline effect */
+}
+
+/* Hover Effects for Links */
+nav ul li a:hover {
+    color: #50b3a2; /* Soft teal color on hover */
+}
+
+/* Underline effect on hover (Subtle yet sophisticated) */
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #50b3a2; /* Teal underline */
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+
+/* About Section Container */
+/* Hamburger Menu */
+/* Hamburger Menu Wrapper */
+/* Hamburger Menu Wrapper */
+.hamburger-menu {
+    position: relative;
+    z-index: 100;
+}
+
+/* Menu Icon Styling (larger button) */
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 45px; /* Increased width for a larger button */
+    height: 40px; /* Increased height for better spacing and better alignment of bars */
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.3s ease; /* Smooth transition for interaction */
+}
+
+/* Nav Icon Bars Styling */
+.nav-icon {
+    width: 45px; /* Adjusted width to match the larger button */
+    height: 6px; /* Increased height for the bars to look more proportional */
+    background-color: #333; /* Neutral dark color for contrast */
+    border-radius: 5px; /* Rounded edges for a modern appearance */
+    transition: all 0.3s ease; /* Smooth transitions for animation */
+    position: relative;
+}
+
+/* Additional bar styling (pseudo elements for before/after transformations) */
+.nav-icon::before,
+.nav-icon::after {
+    content: "";
+    position: absolute;
+    width: 45px; /* Match the width of the main bar */
+    height: 6px; /* Adjusted height to match the larger button */
+    background-color: #333;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Position before and after bars */
+.nav-icon::before {
+    top: -10px; /* Space above the main bar */
+}
+
+.nav-icon::after {
+    top: 10px; /* Space below the main bar */
+}
+
+/* Menu Styling */
+.menu {
+    display: none;  /* Hide menu by default */
+    position: absolute;
+    top: 50px; /* Position below the hamburger icon */
+    right: 0;
+    background-color: #333;
+    width: 250px; /* Menu width */
+    max-height: 100vh; /* Ensure menu does not overflow the viewport */
+    overflow-y: auto; /* Allow scrolling if necessary */
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Menu Items Styling */
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;  /* Stack links vertically */
+}
+
+.menu ul li {
+    margin: 10px 0;  /* Space between items */
+}
+
+.menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Link hover effect */
+.menu ul li a:hover {
+    background-color: #555; /* Slight background change on hover */
+}
+
+/* Show menu when checkbox is checked */
+#menu-toggle:checked + .menu-icon + .menu {
+    display: block;
+}
+
+/* Hamburger Icon Transforms when Menu is Open */
+#menu-toggle:checked + .menu-icon .nav-icon {
+    background-color: transparent; /* Hide the middle bar */
+}
+
+/* Transform top and bottom bars into 'X' */
+#menu-toggle:checked + .menu-icon .nav-icon::before {
+    transform: rotate(45deg); /* Rotate the top bar */
+    top: 0; /* Adjust position to align with middle */
+}
+
+#menu-toggle:checked + .menu-icon .nav-icon::after {
+    transform: rotate(-45deg); /* Rotate the bottom bar */
+    top: 0; /* Adjust position */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    /* Adjust the hamburger icon for smaller screens */
+    .menu-icon {
+        width: 50px; /* Increase the size for easier interaction */
+        height: 45px;
+    }
+
+    /* Adjust the menu positioning and size on smaller screens */
+    .menu {
+        top: 50px;
+        right: 10px;
+        width: 220px;
+    }
+
+    /* Style links for smaller screens */
+    .menu ul li a {
+        font-size: 16px;
+    }
+}
+
+
+#about-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 35px; /* Adjusted padding for a larger and more balanced button */
+    font-size: 1em; /* More readable font size */
+    background-color: #333; /* Sophisticated dark background color */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50px; /* Pill-shaped rounded corners for a sleek look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    white-space: nowrap;
+    position: absolute;
+    left: 50%; /* Center the button horizontally */
+    transform: translateX(-50%); /* Adjust to perfect centering, removing any horizontal movement */
+    top: 10px; /* Adjusted position for better visual alignment */
+}
+
+/* Hover Effect */
+#about-btn:hover {
+    background-color: #444; /* Slightly lighter on hover */
+    transform: translateY(-4px); /* Slight lift for an interactive feel */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover for emphasis */
+}
+
+/* Focus Effect (For accessibility) */
+#about-btn:focus {
+    outline: none; /* Remove the default focus outline */
+    box-shadow: 0 0 8px rgba(2, 118, 255, 0.6); /* Soft blue glow on focus */
+}
+
+/* Active State */
+#about-btn:active {
+    transform: translateY(2px); /* Subtle press effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Reset shadow on active state */
+}
+
+/* Parallax Section 1 */
+#parallax-section-1 {
+    position: relative;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/El_Beso_%28Pinacoteca_de_Brera%2C_Mil%C3%A1n%2C_1859%29.jpg/4096px-El_Beso_%28Pinacoteca_de_Brera%2C_Mil%C3%A1n%2C_1859%29.jpg'); /* Updated to the high-res image */
+    background-size: cover; /* Make the image cover the entire section */
+    background-position: center; /* Center the image */
+    padding: 60px 0; /* Adjust padding for visual balance */
+    height: 100vh; /* Ensure the section fills the viewport height */
+}
+
+/* Quick Facts Section */
+#quick-facts-section {
+    position: relative;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Henriette_Lorimier_-_The_Gallant_Couple.jpg/2048px-Henriette_Lorimier_-_The_Gallant_Couple.jpg?20210708020036');
+    background-size: cover;
+    background-position: center;
+    padding: 60px 0; /* Adjust padding for visual balance */
+    height: 100vh;
+}
+/* Pictures of Us Section */
+#pictures-of-us-section {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Overview_of_couple_at_Vyhl%C3%ADdka_Solenick%C3%A1_podkova_at_Solenice%2C_P%C5%99%C3%ADbram_District.jpg/2048px-Overview_of_couple_at_Vyhl%C3%ADdka_Solenick%C3%A1_podkova_at_Solenice%2C_P%C5%99%C3%ADbram_District.jpg?20200101182246');
+    background-size: cover;
+    background-position: center;
+    color: #333;
+    padding: 60px 0; /* Adjust padding for visual balance */
+    height: 100vh;
+}
+
+/* First Date Star Map Section */
+#first-date-star-map-section {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Starsinthesky.jpg/2048px-Starsinthesky.jpg?20100513204003');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 60px 0;
+    height: 100vh;
+}
+/* Spotify Playlist Section */
+#spotify-playlist-section {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/The_Musicians_MET_DP-687-001.jpg/2048px-The_Musicians_MET_DP-687-001.jpg?20170325174241');
+    background-size: cover;
+    background-position: center;
+    color: #333;
+    padding: 60px 0;
+    height: 100vh;
+}
+
+/* Love Map Section */
+#love-map-section {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Turgot_map_of_Paris%2C_general_map_-_Norman_B._Leventhal_Map_Center.jpg/4096px-Turgot_map_of_Paris%2C_general_map_-_Norman_B._Leventhal_Map_Center.jpg?20180216061239');
+    background-size: cover; /* Ensure the image covers the section */
+    background-position: center; /* Center the image */
+    background-attachment: fixed; /* Optional: keep the background fixed during scrolling */
+    color: #000; /* Text color */
+    padding: 60px 0; /* Adjust padding as needed */
+    height: 100vh; /* Full viewport height */
+}
+/* Open When Messages Section */
+#open-when-messages-section {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Registered_Letter_%28NSW%29_to_Tattersalls_%28George_Adams%29_March_1901.jpg/2048px-Registered_Letter_%28NSW%29_to_Tattersalls_%28George_Adams%29_March_1901.jpg?20240407122023');
+    background-size: cover; /* Ensure the image covers the entire section */
+    background-position: center; /* Center the image */
+    background-attachment: fixed; /* Keeps the image fixed during scrolling */
+    color: #333; /* Text color */
+    padding: 60px 0; /* Adjust padding */
+    height: 100vh; /* Set section height to fill the viewport */
+}
+/* Movies We've Watched Together Section */
+#movies-weve-watched-together-section {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Chaplin_The_Kid_edit.jpg/2048px-Chaplin_The_Kid_edit.jpg?20140110154020');
+    color: white;
+    padding: 60px 0;
+    height: 100vh;
+}
+
+/* Wedding Plans Section */
+#wedding-plans-section {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Wedding%2C_tableau%2C_bride%2C_painting%2C_uniform%2C_medal%2C_skirt%2C_fur_coat%2C_hat%2C_bourgeoisie_Fortepan_6297.jpg/2048px-Wedding%2C_tableau%2C_bride%2C_painting%2C_uniform%2C_medal%2C_skirt%2C_fur_coat%2C_hat%2C_bourgeoisie_Fortepan_6297.jpg?20160604153306');
+    background-size: cover; /* Ensure the image covers the entire section */
+    background-position: center; /* Center the image */
+    background-attachment: fixed; /* Keeps the image fixed during scrolling */
+    color: #333; /* Text color */
+    padding: 60px 0; /* Adjust padding */
+    height: 100vh; /* Set section height to fill the viewport */
+}
+
+/* Spin the Wheel of Love Section */
+#spin-the-wheel-of-love-section {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/USMC-10482.jpg/1024px-USMC-10482.jpg?20121211072937');
+    background-size: cover; /* Ensure the image covers the entire section */
+    background-position: center; /* Center the image */
+    background-attachment: fixed; /* Keeps the image fixed during scrolling */
+    color: white; /* Text color */
+    padding: 60px 0; /* Adjust padding */
+    height: 100vh; /* Set section height to fill the viewport */
+}
+/* Relationship Contract Section */
+#relationship-contract-section {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Contract_-_CC-BY-SA_-_Gunnar_Wrobel.jpg/2048px-Contract_-_CC-BY-SA_-_Gunnar_Wrobel.jpg?20070414091301');
+    color: #333;
+    padding: 60px 0;
+    height: 100vh;
+}
+/* Bucket List Section */
+#bucket-list-section {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Gondola_on_the_Canal_Grande_in_Venice.jpg/4096px-Gondola_on_the_Canal_Grande_in_Venice.jpg?20150814165811');
+    color: #000;
+    padding: 60px 0;
+    height: 100vh;
+}
+
+/* Relationship FAQ Section */
+#relationship-faq-section {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Wikimania_2016_-_Q%26A_with_the_executive_director_of_Wikimedia_Foundation_10.jpg/2048px-Wikimania_2016_-_Q%26A_with_the_executive_director_of_Wikimedia_Foundation_10.jpg?20160626100002');
+    color: #333;
+    padding: 60px 0;
+    height: 100vh;
+}
+
+/* Love Stats Section */
+#love-stats-section {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Standard_Normal_Distribution.png/4096px-Standard_Normal_Distribution.png?20190624182534');
+    color: white;
+    padding: 60px 0;
+    height: 100vh;
+}
+
+
+/* Zodiac Compatibility Section */
+#zodiac-compatibility-section {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Zodiac_in_The_Sky%2C_pp._40%E2%80%9341.jpg/1024px-Zodiac_in_The_Sky%2C_pp._40%E2%80%9341.jpg?20180225024846');
+    color: #000;
+    padding: 60px 0;
+    height: 100vh;
+}
+
+/* Date Idea Generator Section */
+#date-idea-generator-section {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Rainbow_cake_picnic_date_-_Disabled_And_Here.jpg/1024px-Rainbow_cake_picnic_date_-_Disabled_And_Here.jpg?20230923214815');
+    color: #333;
+    padding: 60px 0;
+    height: 100vh;
+}
+
+
+/* Dream Home Vision Board Section */
+#dream-home-vision-board-section {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Waddesdon_Manor_south_east_2016.jpg/4096px-Waddesdon_Manor_south_east_2016.jpg?20160221175236');
+    color: #333;
+    padding: 60px 0;
+    height: 100vh;
+}
+
+#dream-home-vision-board-section .button-container {
+    text-align: center;
+}
+
+#dream-home-vision-board-section .btn-3 {
+    font-size: 1.5em;
+    color: #fff;
+    background-color: #ff6347; /* Example button color */
+    padding: 15px 25px;
+    border-radius: 5px;
+}
+.spacer {
+    height: 100px; /* Adjust height for desired spacing */
+    width: 100%; /* Full width */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.5)); /* Soft gradient for a smooth transition */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    margin-top: 2em; /* Adds subtle space above the spacer */
+    margin-bottom: 2em; /* Adds subtle space below the spacer */
+    transition: all 0.3s ease; /* Smooth transition for interactive effects */
+}
+
+/* Section-Specific Styles */
+#love-poems-and-quotes-section {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Targa_in_marmo_sul_muro_dell%27abbazia_di_Vallombrosa_con_citazione_dell%27Ariosto.jpg/2048px-Targa_in_marmo_sul_muro_dell%27abbazia_di_Vallombrosa_con_citazione_dell%27Ariosto.jpg?20220930140021');
+    background-size: cover; /* Ensure the image covers the entire section */
+    height: 100vh;
+    padding: 60px 0;
+    text-align: center;
+}
+
+#love-coupons-section {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Coupon_Pile_%2810865752156%29.jpg/4096px-Coupon_Pile_%2810865752156%29.jpg?20141012145932');
+    background-size: cover;
+    background-size: cover;
+    height: 100vh;
+    padding: 60px 0;
+    text-align: center;
+}
+
+#i-love-you-section {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/I_Love_You-Ambilly-2.jpg/2048px-I_Love_You-Ambilly-2.jpg?20210919172543');
+    background-size: cover;
+    height: 100vh;
+    padding: 60px 0;
+    text-align: center;
+}
+
+#scavenger-hunt-section {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Wikip%C3%A9dia_sur_Loire_May_2016_photo_scavenger_hunt_1.jpg/4096px-Wikip%C3%A9dia_sur_Loire_May_2016_photo_scavenger_hunt_1.jpg?20161107180826');
+    background-size: cover;
+    height: 100vh;
+    padding: 60px 0;
+    text-align: center;
+}
+
+#truth-or-dare-section {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Spin_the_bottle.jpg/2048px-Spin_the_bottle.jpg?20101201203004');
+    background-size: cover;
+    height: 100vh;
+    padding: 60px 0;
+    text-align: center;
+}
+
+#love-notes-section {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/%22The_Love_Letter%22_by_Auguste_Toulmouche.jpg/2048px-%22The_Love_Letter%22_by_Auguste_Toulmouche.jpg?20160923154446');
+    background-size: cover;
+    height: 100vh;
+    padding: 60px 0;
+    text-align: center;
+}
+
+#dommy-trivia-section {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Transit_Trivia_Night_%2812240727563%29.jpg/1024px-Transit_Trivia_Night_%2812240727563%29.jpg?20140531005353');
+    background-size: cover;
+    height: 100vh;
+    padding: 60px 0;
+    text-align: center;
+}
+
+#tinder-2-section {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Deleting_dating_apps_from_phone.jpg/2048px-Deleting_dating_apps_from_phone.jpg?20210817143729');
+    background-size: cover;
+    height: 100vh;
+    padding: 60px 0;
+    text-align: center;
+}
+
+#virtual-escape-room-section {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Escape_Room_-_%22The_Expedition%22_%28Escape_Quest_Bethesda%29.jpg/2048px-Escape_Room_-_%22The_Expedition%22_%28Escape_Quest_Bethesda%29.jpg?20190825204848');
+    background-size: cover;
+    height: 100vh;
+    padding: 60px 0;
+    text-align: center;
+}
+
+#virtual-candlelit-dinner-section {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Gonzales_Coques_-_Dinner_of_artists.jpg/4096px-Gonzales_Coques_-_Dinner_of_artists.jpg?20230112135043');
+    background-size: cover;
+    height: 100vh;
+    padding: 60px 0;
+    text-align: center;
+}
+/* Optional hover effect to give a dynamic feel */
+.spacer:hover {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15), rgba(255, 255, 255, 0.6));
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+.button-container {
+    text-align: center;
+    margin-top: 30px;
+    opacity: 0; /* Hide the button initially */
+    transform: translateY(50px); /* Position it below */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Add transition for sliding and fading in */
+}
+
+.btn-1-2 {
+    font-size: 1.2em; /* Slightly smaller for a more balanced design */
+    color: #fff;
+    background: linear-gradient(145deg, #ff6347, #e53e31); /* Gradient background for depth */
+    padding: 18px 32px; /* Increase padding for a larger, more clickable button */
+    border-radius: 50px; /* Rounded corners for a more modern feel */
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+    font-weight: 600; /* Slightly bolder text for emphasis */
+    letter-spacing: 1px; /* Adds some spacing between letters for a sleek appearance */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+    transition: all 0.3s ease-out; /* Smooth transitions for hover and focus */
+}
+
+.btn-1-2:hover {
+    background: linear-gradient(145deg, #e53e31, #ff6347); /* Reverse gradient for hover effect */
+    transform: translateY(-3px); /* Button slightly lifts up for interactive feel */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow for hover */
+}
+
+.btn-1-2:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 99, 71, 0.8); /* Focus effect with a soft glowing outline */
+}
+
+.btn-1-2:active {
+    transform: translateY(2px); /* Button presses down when clicked */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* Lighter shadow on click */
+}

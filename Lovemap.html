@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Love Map</title>
+
+    var map = L.map('map').setView([51.505, -0.09], 13);
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    
+    L.marker([51.5, -0.09]).addTo(map)
+        .bindPopup('A pretty CSS popup.<br> Easily customizable.')
+        .openPopup();
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+    <style>
+        /* Set the height and width for the map container to fill the entire screen */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            background-color: #121212; /* Dark background for the body */
+        }
+
+        #map {
+            height: 100%; /* Make the map fill the screen height */
+            width: 100%;  /* Make the map fill the screen width */
+        }
+
+        /* Title styling to ensure it overlaps the map */
+        h1 {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            z-index: 1000;  /* Ensure it's on top of the map */
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        /* Optional: Styling for the popup */
+        .popup-text {
+            font-size: 16px;
+            color: #050505; /* Light text for readability on dark background */
+        }
+    </style>
+</head>
+<body>
+    <h1>Our Love Map</h1>
+    <div id="map"></div> <!-- This is the container for the map -->
+
+    <!-- Include Leaflet.js -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <script>
+        // Initialize the map and set default coordinates (Zoomed in on Houston)
+        var map = L.map('map').setView([29.7604, -95.3698], 12); // Centered on Houston, TX
+
+        // Add CartoDB Dark All layer (dark background with white roads)
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CartoDB</a>',
+            tileSize: 256,
+            zoomOffset: 0
+        }).addTo(map);
+
+        // Create a custom map pin-shaped marker icon with CSS (No SVG)
+        var mapPinIcon = L.divIcon({
+            className: 'custom-pin', // Custom class for styling
+            html: '<div class="pin"></div>', // Pin design using CSS
+            iconSize: [30, 45], // Size of the marker
+            iconAnchor: [15, 45], // Anchor point at the bottom of the pin
+            popupAnchor: [0, -40] // Position of the popup relative to the pin
+        });
+
+        // Define an array of locations with text to be displayed in popups
+        var locations = [
+            { lat: 29.780670, lon: -95.538033, text: 'This is where we had our first date!' },
+            { lat: 29.687790, lon: -95.460829, text: 'Where we bought your tie for Halloween!' },
+            { lat: 29.785360, lon: -95.464728, text: 'Where we had our first escape room!' },
+            { lat: 29.692688, lon: -95.467497, text: 'Where we trick or treated for the first time!' }
+        ];
+
+        // Add markers with the custom map pin icon for each location
+        locations.forEach(function(location) {
+            var marker = L.marker([location.lat, location.lon], { icon: mapPinIcon }).addTo(map);
+            marker.bindPopup('<div class="popup-text">' + location.text + '</div>'); // Text for each popup
+        });
+    </script>
+
+    <style>
+        /* Custom pin shape for the markers */
+        .custom-pin .pin {
+            width: 30px;
+            height: 40px;
+            background-color: red;
+            border-radius: 50% 50% 0 0; /* Round top to form a pin shape */
+            position: relative;
+            top: 5px;
+            left: 0;
+            border: 2px solid white; /* White border around the pin */
+        }
+
+        .custom-pin .pin::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            border-radius: 50%;
+            border: 2px solid white; /* Small white border for the "tip" of the pin */
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Well Do You Know Me?</title>
+    <link rel="stylesheet" href="dommytrivia.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>How Well Do You Know Me?</h1>
+
+        <form id="quiz-form">
+        <div class="question">
+            <p>What is my favorite color?</p>
+            <label>
+                <input type="radio" name="q1" value="A"> Red
+            </label>
+            <label>
+                <input type="radio" name="q1" value="B" data-correct="true"> Blue
+            </label>
+            <label>
+                <input type="radio" name="q1" value="C"> Green
+            </label>
+            <label>
+                <input type="radio" name="q1" value="D"> Yellow
+            </label>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question">
+            <p>What is my favorite food or meal?</p>
+            <label>
+                <input type="radio" name="q2" value="A" data-correct="true"> Hamburgers
+            </label>
+            <label>
+                <input type="radio" name="q2" value="B"> Sushi
+            </label>
+            <label>
+                <input type="radio" name="q2" value="C"> Tacos
+            </label>
+            <label>
+                <input type="radio" name="q2" value="D"> Pasta
+            </label>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question">
+            <p>What genre of movies or TV shows do I like the most?</p>
+            <label>
+                <input type="radio" name="q3" value="A"> Comedy
+            </label>
+            <label>
+                <input type="radio" name="q3" value="B"> Horror
+            </label>
+            <label>
+                <input type="radio" name="q3" value="C"> Action
+            </label>
+            <label>
+                <input type="radio" name="q3" value="D" data-correct="true"> Any
+            </label>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question">
+            <p>What’s my favorite type of weather?</p>
+            <label>
+                <input type="radio" name="q4" value="A" data-correct="true"> Rainy
+            </label>
+            <label>
+                <input type="radio" name="q4" value="B"> Snowy
+            </label>
+            <label>
+                <input type="radio" name="q4" value="C"> Sunny
+            </label>
+            <label>
+                <input type="radio" name="q4" value="D"> Windy
+            </label>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question">
+            <p>What’s something I’ve always wanted to learn or try but haven’t yet?</p>
+            <label>
+                <input type="radio" name="q5" value="A" data-correct="true"> Surfing
+            </label>
+            <label>
+                <input type="radio" name="q5" value="B"> Playing the guitar
+            </label>
+            <label>
+                <input type="radio" name="q5" value="C"> Skydiving
+            </label>
+            <label>
+                <input type="radio" name="q5" value="D"> Rock climbing
+            </label>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question">
+            <p>What is my dream job?</p>
+            <label>
+                <input type="radio" name="q6" value="A" data-correct="true"> Doctor
+            </label>
+            <label>
+                <input type="radio" name="q6" value="B"> Astronaut
+            </label>
+            <label>
+                <input type="radio" name="q6" value="C"> Professional athlete
+            </label>
+            <label>
+                <input type="radio" name="q6" value="D"> Artist
+            </label>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="question">
+            <p>Do I prefer coffee, tea, or something else to drink?</p>
+            <label>
+                <input type="radio" name="q7" value="A"> Coffee
+            </label>
+            <label>
+                <input type="radio" name="q7" value="B"> Tea
+            </label>
+            <label>
+                <input type="radio" name="q7" value="C"> Juice
+            </label>
+            <label>
+                <input type="radio" name="q7" value="D" data-correct="true"> Water
+            </label>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="question">
+            <p>What is my dream vacation destination?</p>
+            <label>
+                <input type="radio" name="q8" value="A"> Japan
+            </label>
+            <label>
+                <input type="radio" name="q8" value="B" data-correct="true"> Italy
+            </label>
+            <label>
+                <input type="radio" name="q8" value="C"> Greece
+            </label>
+            <label>
+                <input type="radio" name="q8" value="D"> Iceland
+            </label>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="question">
+            <p>What type of music do I listen to the most?</p>
+            <label>
+                <input type="radio" name="q9" value="A"> Pop
+            </label>
+            <label>
+                <input type="radio" name="q9" value="B" data-correct="true"> Rock
+            </label>
+            <label>
+                <input type="radio" name="q9" value="C"> Hip-hop
+            </label>
+            <label>
+                <input type="radio" name="q9" value="D"> Classical
+            </label>
+        </div>
+
+        <!-- Question 10 -->
+        <div class="question">
+            <p>What is my favorite animal?</p>
+            <label>
+                <input type="radio" name="q10" value="A"> Dog
+            </label>
+            <label>
+                <input type="radio" name="q10" value="B" data-correct="true"> Peacock
+            </label>
+            <label>
+                <input type="radio" name="q10" value="C"> Elephant
+            </label>
+            <label>
+                <input type="radio" name="q10" value="D"> Dolphin
+            </label>
+        </div>
+        <!-- Question 11 -->
+<div class="question">
+    <p>What’s my favorite type of cuisine?</p>
+    <label>
+        <input type="radio" name="q11" value="A"> Italian
+    </label>
+    <label>
+        <input type="radio" name="q11" value="B" data-correct="true"> Mexican
+    </label>
+    <label>
+        <input type="radio" name="q11" value="C"> Chinese
+    </label>
+    <label>
+        <input type="radio" name="q11" value="D"> Indian
+    </label>
+</div>
+
+<!-- Question 12 -->
+<div class="question">
+    <p>What is my favorite hobby?</p>
+    <label>
+        <input type="radio" name="q12" value="A"> Painting
+    </label>
+    <label>
+        <input type="radio" name="q12" value="B" data-correct="true"> Music
+    </label>
+    <label>
+        <input type="radio" name="q12" value="C"> Reading
+    </label>
+    <label>
+        <input type="radio" name="q12" value="D"> Cooking
+    </label>
+</div>
+
+<!-- Question 13 -->
+<div class="question">
+    <p>What is my favorite sport?</p>
+    <label>
+        <input type="radio" name="q13" value="A" data-correct="true"> Basketball
+    </label>
+    <label>
+        <input type="radio" name="q13" value="B"> Football
+    </label>
+    <label>
+        <input type="radio" name="q13" value="C"> Soccer
+    </label>
+    <label>
+        <input type="radio" name="q13" value="D"> Tennis
+    </label>
+</div>
+
+<!-- Question 14 -->
+<div class="question">
+    <p>What’s my favorite holiday?</p>
+    <label>
+        <input type="radio" name="q14" value="A" data-correct="true"> Christmas
+    </label>
+    <label>
+        <input type="radio" name="q14" value="B"> Halloween
+    </label>
+    <label>
+        <input type="radio" name="q14" value="C"> New Year’s Eve
+    </label>
+    <label>
+        <input type="radio" name="q14" value="D"> Thanksgiving
+    </label>
+</div>
+
+<!-- Question 15 -->
+<div class="question">
+    <p>What’s my go-to type of workout?</p>
+    <label>
+        <input type="radio" name="q15" value="A"> Weightlifting
+    </label>
+    <label>
+        <input type="radio" name="q15" value="B"> Running
+    </label>
+    <label>
+        <input type="radio" name="q15" value="C"> Yoga
+    </label>
+    <label>
+        <input type="radio" name="q15" value="D" data-correct="true"> Swimming
+    </label>
+</div>
+
+<!-- Question 16 -->
+<div class="question">
+    <p>What’s my biggest fear?</p>
+    <label>
+        <input type="radio" name="q16" value="A" data-correct="true"> Heights
+    </label>
+    <label>
+        <input type="radio" name="q16" value="B"> Spiders
+    </label>
+    <label>
+        <input type="radio" name="q16" value="C"> Failure
+    </label>
+    <label>
+        <input type="radio" name="q16" value="D"> Clowns
+    </label>
+</div>
+
+<!-- Question 17 -->
+<div class="question">
+    <p>What is my favorite season of the year?</p>
+    <label>
+        <input type="radio" name="q17" value="A" data-correct="true"> Spring
+    </label>
+    <label>
+        <input type="radio" name="q17" value="B"> Summer
+    </label>
+    <label>
+        <input type="radio" name="q17" value="C"> Autumn
+    </label>
+    <label>
+        <input type="radio" name="q17" value="D"> Winter
+    </label>
+</div>
+
+<!-- Question 18 -->
+<div class="question">
+    <p>What’s my favorite drink (non-alcoholic)?</p>
+    <label>
+        <input type="radio" name="q18" value="A"> Soda
+    </label>
+    <label>
+        <input type="radio" name="q18" value="B"> Iced tea
+    </label>
+    <label>
+        <input type="radio" name="q18" value="C"> Coffee
+    </label>
+    <label>
+        <input type="radio" name="q18" value="D" data-correct="true"> Water
+    </label>
+</div>
+
+<!-- Question 19 -->
+<div class="question">
+    <p>What’s my favorite type of movie character?</p>
+    <label>
+        <input type="radio" name="q19" value="A"> Hero
+    </label>
+    <label>
+        <input type="radio" name="q19" value="B"> Villain
+    </label>
+    <label>
+        <input type="radio" name="q19" value="C" data-correct="true"> Antihero
+    </label>
+    <label>
+        <input type="radio" name="q19" value="D"> Sidekick
+    </label>
+</div>
+
+<!-- Question 20 -->
+<div class="question">
+    <p>What’s my favorite genre of books?</p>
+    <label>
+        <input type="radio" name="q20" value="A" data-correct="true"> Fiction
+    </label>
+    <label>
+        <input type="radio" name="q20" value="B"> Mystery/Thriller
+    </label>
+    <label>
+        <input type="radio" name="q20" value="C"> Fantasy
+    </label>
+    <label>
+        <input type="radio" name="q20" value="D"> Non-fiction
+    </label>
+</div>
+<!-- Question 23 -->
+<div class="question">
+    <p>What’s my favorite type of dessert?</p>
+    <label>
+        <input type="radio" name="q23" value="A"> Cake
+    </label>
+    <label>
+        <input type="radio" name="q23" value="B"> Ice Cream
+    </label>
+    <label>
+        <input type="radio" name="q23" value="C" data-correct="true"> Cookies
+    </label>
+    <label>
+        <input type="radio" name="q23" value="D"> Brownies
+    </label>
+</div>
+
+<!-- Question 24 -->
+<div class="question">
+    <p>What is my dream vacation destination?</p>
+    <label>
+        <input type="radio" name="q24" value="A"> Paris
+    </label>
+    <label>
+        <input type="radio" name="q24" value="B"> Tokyo
+    </label>
+    <label>
+        <input type="radio" name="q24" value="C" data-correct="true"> Rome
+    </label>
+    <label>
+        <input type="radio" name="q24" value="D"> New York City
+    </label>
+</div>
+
+<!-- Question 25 -->
+<div class="question">
+    <p>What’s my favorite type of pet?</p>
+    <label>
+        <input type="radio" name="q25" value="A"> Dog
+    </label>
+    <label>
+        <input type="radio" name="q25" value="B"> Cat
+    </label>
+    <label>
+        <input type="radio" name="q25" value="C" data-correct="true"> Fish
+    </label>
+    <label>
+        <input type="radio" name="q25" value="D"> Hamster
+    </label>
+</div>
+
+<!-- Question 26 -->
+<div class="question">
+    <p>What’s my favorite way to relax?</p>
+    <label>
+        <input type="radio" name="q26" value="A"> Watching TV
+    </label>
+    <label>
+        <input type="radio" name="q26" value="B"> Reading a book
+    </label>
+    <label>
+        <input type="radio" name="q26" value="C" data-correct="true"> Listening to music
+    </label>
+    <label>
+        <input type="radio" name="q26" value="D"> Taking a walk
+    </label>
+</div>
+
+<!-- Question 27 -->
+<div class="question">
+    <p>What’s my favorite TV show?</p>
+    <label>
+        <input type="radio" name="q27" value="A"> Breaking Bad
+    </label>
+    <label>
+        <input type="radio" name="q27" value="B"> Game of Thrones
+    </label>
+    <label>
+        <input type="radio" name="q27" value="C" data-correct="true"> House M.D.
+    </label>
+    <label>
+        <input type="radio" name="q27" value="D"> The Office
+    </label>
+</div>
+
+<!-- Question 28 -->
+<div class="question">
+    <p>What’s my favorite type of weather?</p>
+    <label>
+        <input type="radio" name="q28" value="A"> Sunny
+    </label>
+    <label>
+        <input type="radio" name="q28" value="B"> Rainy
+    </label>
+    <label>
+        <input type="radio" name="q28" value="C"> Snowy
+    </label>
+    <label>
+        <input type="radio" name="q28" value="D"> Cloudy
+    </label>
+</div>
+
+<!-- Question 29 -->
+<div class="question">
+    <p>What’s my favorite type of pizza topping?</p>
+    <label>
+        <input type="radio" name="q29" value="A" data-correct="true"> Pepperoni
+    </label>
+    <label>
+        <input type="radio" name="q29" value="B"> Mushrooms
+    </label>
+    <label>
+        <input type="radio" name="q29" value="C"> Sausage
+    </label>
+    <label>
+        <input type="radio" name="q29" value="D"> Pineapple
+    </label>
+</div>
+
+<!-- Question 30 -->
+<div class="question">
+    <p>If I could have any superpower, which one would I choose?</p>
+    <label>
+        <input type="radio" name="q32" value="A" data-correct="true"> Invisibility
+    </label>
+    <label>
+        <input type="radio" name="q32" value="B"> Teleportation
+    </label>
+    <label>
+        <input type="radio" name="q32" value="C"> Time travel
+    </label>
+    <label>
+        <input type="radio" name="q32" value="D"> Super strength
+    </label>
+</div>
+
+<div class="question">
+    <p>What’s my all-time favorite childhood toy?</p>
+    <label>
+        <input type="radio" name="q34" value="A" data-correct="true"> Lego set
+    </label>
+    <label>
+        <input type="radio" name="q34" value="B"> Teddy bear
+    </label>
+    <label>
+        <input type="radio" name="q34" value="C"> Action figures
+    </label>
+    <label>
+        <input type="radio" name="q34" value="D"> Remote control car
+    </label>
+</div>
+
+<!-- Question 32 -->
+<div class="question">
+    <p>If I could live in any fictional universe, which one would I choose?</p>
+    <label>
+        <input type="radio" name="q35" value="A"> Harry Potter
+    </label>
+    <label>
+        <input type="radio" name="q35" value="B" data-correct="true"> Star Wars
+    </label>
+    <label>
+        <input type="radio" name="q35" value="C"> Lord of the Rings
+    </label>
+    <label>
+        <input type="radio" name="q35" value="D"> Marvel Universe
+    </label>
+</div>
+
+
+<!-- Question 33 -->
+<div class="question">
+    <p>What’s my favorite movie genre?</p>
+    <label>
+        <input type="radio" name="q33" value="A"> Sci-Fi
+    </label>
+    <label>
+        <input type="radio" name="q33" value="B"> Romance
+    </label>
+    <label>
+        <input type="radio" name="q33" value="C" data-correct="true"> Thriller
+    </label>
+    <label>
+        <input type="radio" name="q33" value="D"> Documentary
+    </label>
+</div>
+
+<div class="question">
+    <p>If I could switch lives with anyone for a day, who would I choose?</p>
+    <label>
+        <input type="radio" name="q44" value="A"> Elon Musk
+    </label>
+    <label>
+        <input type="radio" name="q44" value="B" data-correct="true"> Kanye West
+    </label>
+    <label>
+        <input type="radio" name="q44" value="C"> A world-renowned artist
+    </label>
+    <label>
+        <input type="radio" name="q44" value="D"> A professional athlete
+    </label>
+</div>
+
+<div class="question">
+    <p>Which fictional character do I most relate to?</p>
+    <label>
+        <input type="radio" name="q46" value="A"> Sherlock Holmes
+    </label>
+    <label>
+        <input type="radio" name="q46" value="B"> Hermione Granger
+    </label>
+    <label>
+        <input type="radio" name="q46" value="C"> Peter Pan
+    </label>
+    <label>
+        <input type="radio" name="q46" value="D" data-correct="true"> Dr. House
+    </label>
+</div>
+
+
+<div class="question">
+    <p>What’s my biggest pet peeve?</p>
+    <label>
+        <input type="radio" name="q48" value="A" data-correct="true"> Barefeet
+    </label>
+    <label>
+        <input type="radio" name="q48" value="B"> Being interrupted
+    </label>
+    <label>
+        <input type="radio" name="q48" value="C"> When people are late
+    </label>
+    <label>
+        <input type="radio" name="q48" value="D"> Clutter in the living room
+    </label>
+</div>
+
+
+<!-- Question 37 -->
+<div class="question">
+    <p>What’s my favorite time of day?</p>
+    <label>
+        <input type="radio" name="q37" value="A"> Morning
+    </label>
+    <label>
+        <input type="radio" name="q37" value="B" data-correct="true"> Afternoon
+    </label>
+    <label>
+        <input type="radio" name="q37" value="C"> Evening
+    </label>
+    <label>
+        <input type="radio" name="q37" value="D"> Night
+    </label>
+</div>
+
+<div class="question">
+    <p>What was my favorite subject in school?</p>
+    <label>
+        <input type="radio" name="q49" value="A"> Mathematics
+    </label>
+    <label>
+        <input type="radio" name="q49" value="B" data-correct="true"> History
+    </label>
+    <label>
+        <input type="radio" name="q49" value="C"> Art
+    </label>
+    <label>
+        <input type="radio" name="q49" value="D"> English Literature
+    </label>
+</div>
+
+<!-- Question 39 -->
+<div class="question">
+    <p>What’s my favorite type of coffee?</p>
+    <label>
+        <input type="radio" name="q39" value="A"> Espresso
+    </label>
+    <label>
+        <input type="radio" name="q39" value="B"> Latte
+    </label>
+    <label>
+        <input type="radio" name="q39" value="C" data-correct="true"> Cappuccino
+    </label>
+    <label>
+        <input type="radio" name="q39" value="D"> Black coffee
+    </label>
+</div>
+
+<div class="question">
+    <p>If I could have dinner with any historical figure, who would it be?</p>
+    <label>
+        <input type="radio" name="q50" value="A"> Albert Einstein
+    </label>
+    <label>
+        <input type="radio" name="q50" value="B" data-correct="true"> Leonardo da Vinci
+    </label>
+    <label>
+        <input type="radio" name="q50" value="C"> Marie Curie
+    </label>
+    <label>
+        <input type="radio" name="q50" value="D"> Winston Churchill
+    </label>
+</div>
+<!-- Question 41 -->
+<div class="question">
+    <p>What’s my favorite ice cream flavor?</p>
+    <label>
+        <input type="radio" name="q41" value="A"> Chocolate
+    </label>
+    <label>
+        <input type="radio" name="q41" value="B"> Vanilla
+    </label>
+    <label>
+        <input type="radio" name="q41" value="C"> Strawberry
+    </label>
+    <label>
+        <input type="radio" name="q41" value="D" data-correct="true"> Cookies N' Cream
+    </label>
+</div>
+
+<div class="question">
+    <p>What’s the one item I couldn’t live without?</p>
+    <label>
+        <input type="radio" name="q57" value="A"> My phone
+    </label>
+    <label>
+        <input type="radio" name="q57" value="B"> A good book
+    </label>
+    <label>
+        <input type="radio" name="q57" value="C" data-correct="true"> Music
+    </label>
+    <label>
+        <input type="radio" name="q57" value="D"> My journal
+    </label>
+</div>
+
+<!-- Question 43 -->
+<div class="question">
+    <p>What’s the most beautiful place I’ve ever visited?</p>
+    <label>
+        <input type="radio" name="q63" value="A"> The Grand Canyon
+    </label>
+    <label>
+        <input type="radio" name="q63" value="B"> The Swiss Alps
+    </label>
+    <label>
+        <input type="radio" name="q63" value="C" data-correct="true"> San Diego
+    </label>
+    <label>
+        <input type="radio" name="q63" value="D"> Santorini, Greece
+    </label>
+</div>
+
+<!-- Question 44 -->
+<div class="question">
+    <p>What’s my favorite type of movie snack?</p>
+    <label>
+        <input type="radio" name="q44" value="A" data-correct="true"> Popcorn
+    </label>
+    <label>
+        <input type="radio" name="q44" value="B"> Nachos
+    </label>
+    <label>
+        <input type="radio" name="q44" value="C"> Candy
+    </label>
+    <label>
+        <input type="radio" name="q44" value="D"> Ice cream
+    </label>
+</div>
+
+<div class="question">
+    <p>What’s my most unusual talent or skill?</p>
+    <label>
+        <input type="radio" name="q65" value="A"> I can solve a Rubik's Cube in under a minute
+    </label>
+    <label>
+        <input type="radio" name="q65" value="B"> I can juggle multiple objects
+    </label>
+    <label>
+        <input type="radio" name="q65" value="C" data-correct="true"> I can yo-yo
+    </label>
+    <label>
+        <input type="radio" name="q65" value="D"> I can play a musical instrument by ear
+    </label>
+</div>
+<!-- Question 46 -->
+<div class="question">
+    <p>What’s my favorite social media platform?</p>
+    <label>
+        <input type="radio" name="q46" value="A"> Instagram
+    </label>
+    <label>
+        <input type="radio" name="q46" value="B"> Twitter
+    </label>
+    <label>
+        <input type="radio" name="q46" value="C" data-correct="true"> Snapchat
+    </label>
+    <label>
+        <input type="radio" name="q46" value="D"> TikTok
+    </label>
+</div>
+
+<!-- Question 47 -->
+<div class="question">
+    <p>What’s my favorite type of fruit?</p>
+    <label>
+        <input type="radio" name="q47" value="A"> Apple
+    </label>
+    <label>
+        <input type="radio" name="q47" value="B" data-correct="true"> Orange
+    </label>
+    <label>
+        <input type="radio" name="q47" value="C"> Mango
+    </label>
+    <label>
+        <input type="radio" name="q47" value="D"> Strawberry
+    </label>
+</div>
+
+<!-- Question 48 -->
+<div class="question">
+    <p>What’s my favorite animal to see at the zoo?</p>
+    <label>
+        <input type="radio" name="q48" value="A"> Lions
+    </label>
+    <label>
+        <input type="radio" name="q48" value="B"> Penguins
+    </label>
+    <label>
+        <input type="radio" name="q48" value="C"> Giraffes
+    </label>
+    <label>
+        <input type="radio" name="q48" value="D" data-correct="true"> Flamingos 
+    </label>
+</div>
+
+<div class="question">
+    <p>What’s the most memorable concert or live performance I’ve been to?</p>
+    <label>
+        <input type="radio" name="q67" value="A" data-correct="true"> A rock concert by Nickelback
+    </label>
+    <label>
+        <input type="radio" name="q67" value="B"> A classical music symphony
+    </label>
+    <label>
+        <input type="radio" name="q67" value="C"> A live comedy show
+    </label>
+    <label>
+        <input type="radio" name="q67" value="D"> A local music festival
+    </label>
+</div>
+
+<div class="question">
+    <p>If I could instantly learn any language, which one would I pick?</p>
+    <label>
+        <input type="radio" name="q68" value="A" data-correct="true"> French
+    </label>
+    <label>
+        <input type="radio" name="q68" value="B"> Mandarin Chinese
+    </label>
+    <label>
+        <input type="radio" name="q68" value="C"> Spanish
+    </label>
+    <label>
+        <input type="radio" name="q68" value="D"> Japanese
+    </label>
+</div>
+
+<button type="button" onclick="submitAnswers()">Submit Answers</button>
+</form>
+
+<div id="results" style="display: none;">
+    <h2>Your Score: <span id="score"></span>/50</h2>
+    <p id="detailed-results"></p>
+</div>
+<div class="progress-container">
+    <div id="progress-bar" class="progress-bar"></div>
+    <iframe id="audio-player" width="640" height="60" 
+        src="https://archive.org/download/JeopardyTheme/Jeopardy.mp3" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen />
+</div>
+</div>
+<script src="dommytrivia.js"></script>
+</body>
+</html>

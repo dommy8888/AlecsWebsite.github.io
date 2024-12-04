@@ -1,0 +1,102 @@
+body {
+    font-family: "Wittgenstein", serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin-top: 30px;
+    gap: 20px; /* Add spacing between buttons */
+}
+
+.button {
+    font-size: 1.2rem;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    color: white; /* Ensure text color is white */
+}
+
+.yes-button {
+    background-color: green; /* Sets the background color to green */
+    color: white; /* Ensures the text is visible on a dark background */
+}
+
+.no-button {
+    background-color: red; /* Sets the background color to red */
+    color: white; /* Ensures the text is visible on a dark background */
+}
+
+/* Hover Effects */
+.yes-button:hover {
+    background-color: darkgreen; /* Slightly darker green on hover */
+}
+
+.no-button:hover {
+    background-color: darkred; /* Slightly darker red on hover */
+}
+
+.response-area {
+    margin-top: 20px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #333;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container {
+    margin-top: 100px;
+    text-align: center;
+}
+.response-area2 {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Styling for the iframe (GIF) */
+.giphy-embed {
+    display: block;
+    margin: 20px auto;
+}
+#response-area2 {
+    display: none; /* Hidden by default */
+    display: flex; /* Use Flexbox for alignment */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    flex-direction: column; /* Stack GIF and text vertically */
+    height: 100vh; /* Full viewport height */
+    width: 100%; /* Full width */
+    text-align: center; /* Center-align text */
+}
+
+#response-area2 iframe {
+    margin-bottom: 20px; /* Space between the GIF and the text */
+}
+
+#response-area2 p {
+    font-size: 1.5rem; /* Adjust font size */
+    color: #333; /* Adjust text color */
+}
+#response-area2 p {
+    text-align: center; /* Center text horizontally */
+    font-size: 1.5rem; /* Adjust font size as needed */
+    color: #333; /* Optional: Customize text color */
+    margin: 0; /* Remove default margins */
+}

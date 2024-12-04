@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1C1C1C; /* Dark background */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+}
+
+.text-wall {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Flexible columns */
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+    padding: 40px;
+    overflow-y: auto;
+    max-height: 90vh; /* Prevent overflow and allow scrolling */
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1); /* Slight translucent background for sleek feel */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Soft shadow for a floating effect */
+}
+
+.text-wall p {
+    font-size: 1.3rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: #D3D3D3; /* Soft white */
+    margin: 15px;
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.text-wall p:hover {
+    color: #FFD700; /* Gold on hover */
+    transform: translateY(-5px); /* Slight upward movement on hover */
+    background: rgba(255, 255, 255, 0.3); /* Subtle background change */
+}
+
+.text-wall p:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.15); /* Alternating background for a dynamic look */
+}
+
+.text-wall p:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.1);
+}

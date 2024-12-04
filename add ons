@@ -1,0 +1,22 @@
+<div class="love-message">
+    You are my everything.
+</div>
+
+.love-message {
+    font-size: 3rem;
+    color: #FF1493;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+body.scrolled .love-message {
+    opacity: 1;
+}
+
+window.addEventListener('scroll', () => {
+    document.body.classList.add('scrolled');
+});

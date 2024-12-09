@@ -4,181 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spin The Wheel Of Love</title>
-    <style>
-    body {
-        font-family: 'Arial', sans-serif;
-        background-color: #f0f0f0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        margin: 0;
-        position: relative;
-    }
-    #canvas {
-        margin: 0 auto;
-        display: block;
-        border: 5px solid #333;
-        border-radius: 50%;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    #result {
-        text-align: center;
-        font-size: 24px;
-        margin-top: 20px;
-        color: #333;
-    }
-    #spinButton {
-        display: block;
-        margin: 20px auto;
-        padding: 10px 20px;
-        font-size: 18px;
-        color: #fff;
-        background-color: #007BFF;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
-    #spinButton:hover {
-        background-color: #0056b3;
-    }
-    #selectorArm {
-        position: absolute;
-        top: calc(50% - 435px); /* Adjusted to position the arm at the top edge of the wheel */
-        left: 50%;
-        width: 0;
-        height: 0;
-        border-left: 20px solid transparent;
-        border-right: 20px solid transparent;
-        border-top: 30px solid #333; /* Changed to border-top to make the arm point downwards */
-        transform: translateX(-50%);
-    }
-    </style>
+    <link rel="stylesheet" href="spinthewheeloflove.css">
 </head>
 </head>
 <body>
+    <div class="container">
+        <h1>The Wheel of Love</h1>
+    </div>
+    <div id="selectorArm"></div>
     <canvas id="canvas" width="650" height="650"></canvas>
     <div id="result"></div>
     <button id="spinButton">Spin the Wheel</button>
-    <div id="selectorArm"></div>
-    <h1> The Wheel of Love</h1>
-    <script>
-        const options = [
-            { fillStyle: '#3369E8', text: 'First Date Do-Over' },
-            { fillStyle: '#D50F25', text: 'Compliment Challenge' },
-            { fillStyle: '#EEB211', text: 'Love Letter Exchange' },
-            { fillStyle: '#009925', text: 'Favorite Memory Reenactment' },
-            { fillStyle: '#3369E8', text: 'Romantic Dance' },
-            { fillStyle: '#D50F25', text: 'Cooking Together' },
-            { fillStyle: '#EEB211', text: 'Future Dreams' },
-            { fillStyle: '#009925', text: 'Secret Date' },
-            { fillStyle: '#3369E8', text: 'Truth or Dare' },
-            { fillStyle: '#D50F25', text: 'Romantic Movie Night' },
-            { fillStyle: '#EEB211', text: 'Photo Challenge' },
-            { fillStyle: '#009925', text: 'Memory Lane' },
-            { fillStyle: '#3369E8', text: 'Love Quiz' },
-            { fillStyle: '#D50F25', text: 'Spa Night' },
-            { fillStyle: '#EEB211', text: 'DIY Gifts' },
-            { fillStyle: '#009925', text: 'Plan a Dream Vacation' },
-            { fillStyle: '#3369E8', text: 'Truthful Confession' },
-            { fillStyle: '#D50F25', text: 'Candlelit Dinner' },
-            { fillStyle: '#EEB211', text: 'Love Song' },
-            { fillStyle: '#009925', text: 'Fun Fortune' },
-            { fillStyle: '#3369E8', text: 'Couple\'s Yoga' },
-            { fillStyle: '#D50F25', text: 'Create a Vision Board' },
-            { fillStyle: '#EEB211', text: 'Love Jar' }
-        ];
+    <script src="spinthewheeloflove.js"></script>
 
-        const canvas = document.getElementById('canvas');
-        const ctx = canvas.getContext('2d');
-        const centerX = canvas.width / 2;
-        const centerY = canvas.height / 2;
-        const radius = canvas.width / 2;
-        const numOptions = options.length;
-        const arcSize = (2 * Math.PI) / numOptions;
-        let startAngle = 0;
-
-        function drawWheel() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            for (let i = 0; i < numOptions; i++) {
-                const angle = startAngle + i * arcSize;
-                ctx.beginPath();
-                ctx.moveTo(centerX, centerY);
-                ctx.arc(centerX, centerY, radius, angle, angle + arcSize);
-                ctx.closePath();
-                ctx.fillStyle = options[i].fillStyle;
-                ctx.fill();
-                ctx.stroke();
-            }
-        }
-
-        function spinWheel() {
-            const spinAngle = Math.random() * 10 + 10;
-            const spinTimeTotal = 5000; // 5 seconds
-            let spinTime = spinTimeTotal;
-            let currentAngle = 0;
-
-            function rotateWheel() {
-                currentAngle += (spinAngle * Math.PI / 180);
-                startAngle += (spinAngle * Math.PI / 180);
-                drawWheel();
-                if (spinTime > 0) {
-                    requestAnimationFrame(rotateWheel);
-                    spinTime -= 30;
-                } else {
-                    const selectedOption = Math.floor((currentAngle / arcSize) % numOptions);
-                    document.getElementById('result').innerText = options[selectedOption].text;
-                }
-            }
-            rotateWheel();
-        }
-
-        canvas.addEventListener('click', spinWheel);
-        document.getElementById('spinButton').addEventListener('click', spinWheel);
-        drawWheel();
-    </script>
 </body>
 </html>
-<script>
-    const resultDiv = document.getElementById('result');
-
-    function revealText(text) {
-        resultDiv.innerHTML = '';
-        let index = 0;
-        function typeWriter() {
-            if (index < text.length) {
-                resultDiv.innerHTML += text.charAt(index);
-                index++;
-                setTimeout(typeWriter, 50);
-            }
-        }
-        typeWriter();
-    }
-
-    function spinWheel() {
-        const spinAngle = Math.random() * 10 + 10;
-        const spinTimeTotal = 5000; // 5 seconds
-        let spinTime = spinTimeTotal;
-        let currentAngle = 0;
-
-        function rotateWheel() {
-            currentAngle += (spinAngle * Math.PI / 180);
-            startAngle += (spinAngle * Math.PI / 180);
-            drawWheel();
-            if (spinTime > 0) {
-                requestAnimationFrame(rotateWheel);
-                spinTime -= 30;
-            } else {
-                const selectedOption = Math.floor((currentAngle / arcSize) % numOptions);
-                revealText(options[selectedOption].text);
-            }
-        }
-        rotateWheel();
-    }
-
-    canvas.addEventListener('click', spinWheel);
-    document.getElementById('spinButton').addEventListener('click', spinWheel);
-    drawWheel();
-</script>

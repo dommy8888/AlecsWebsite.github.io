@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorites Page</title>
+    <link rel="stylesheet" href="musicwall.css">
+</head>
+<body onload="populateFavorites()">
+    <div id="homePage">
+        <h1>Favorites</h1>
+
+        <div class="section" id="dommySection">
+            <h2>Dommy's Favorites</h2>
+            <div class="category" id="dommySongs">
+                <h3>Songs</h3>
+                <ul id="dommySongsList"></ul>
+            </div>
+            <div class="category" id="dommyArtists">
+                <h3>Artists</h3>
+                <ul id="dommyArtistsList"></ul>
+            </div>
+            <div class="category" id="dommyAlbums">
+                <h3>Albums</h3>
+                <ul id="dommyAlbumsList"></ul>
+            </div>
+        </div>
+
+        <div class="section" id="alecSection">
+            <h2>Alec's Favorites</h2>
+            <div class="category" id="alecSongs">
+                <h3>Songs</h3>
+                <ul id="alecSongsList"></ul>
+            </div>
+            <div class="category" id="alecArtists">
+                <h3>Artists</h3>
+                <ul id="alecArtistsList"></ul>
+            </div>
+            <div class="category" id="alecAlbums">
+                <h3>Albums</h3>
+                <ul id="alecAlbumsList"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="detailsPage" class="hidden">
+        <button type="button" class="back-button" onclick="goBack()">Back to Home</button>
+        <h1 id="detailTitle"></h1>
+        <div id="detailContent">
+            <!-- Content will be populated here dynamically -->
+        </div>
+    </div>
+
+    <script src="musicwall.js"></script>
+</body>
+</html>

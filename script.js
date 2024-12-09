@@ -28,55 +28,85 @@ window.addEventListener('scroll', () => {
 });
 document.getElementById('about-btn').addEventListener('click', function() {
     // Customize this text to whatever you want to show when the About button is clicked
-    var aboutText = "This is a special website for us. Here, you'll find everything from our favorite memories together to our future plans. I love you more every day!";
+    var aboutText = `
+    This website is more than just a project—it's a piece of my heart, a gift that I’ve put together with care, attention, and, most importantly, love. As we navigate through the ups and downs of life, I wanted to create something just for us, a space that holds our memories, dreams, and the beautiful future we’re going to build together.
+    
+    Every image, every word, every little detail here has a purpose. It's a reflection of the love I feel for you, a constant reminder of how much you mean to me. This isn't just about the website or the design—it's about us, our journey, and everything that makes our connection so special.
+    
+    Every time I look at you, I realize how incredibly lucky I am to have found someone like you. You are my confidant, my partner, my greatest adventure. You’ve stood by me through thick and thin, and the love we share only grows stronger with each passing day. This space is a testament to that love, a way for me to express the things I sometimes can’t find the words for.
+    
+    As we continue to walk this path together, I wanted to give you something that reminds us of all we’ve built so far. From the quiet moments of understanding to the loud bursts of laughter, this site is our story—our love story. I hope it brings you as much joy to explore it as it brought me to create it.
+    
+    I love you more than words can say, and I’m beyond excited for the future we’re creating. Every day with you is a gift, and this is just one small way of showing you how much you mean to me. This is my Christmas gift to you, a token of my affection and a promise to continue cherishing you for the rest of our lives.
+`;
+var aboutTextContainer = document.getElementById('about-text-container');
+var aboutTextElement = document.getElementById('about-text');
 
-    // Get the container and element where the text will be displayed
-    var aboutTextContainer = document.getElementById('about-text-container');
-    var aboutTextElement = document.getElementById('about-text');
-    
-    // Display the custom About Text
-    aboutTextElement.textContent = aboutText;
-    aboutTextContainer.style.display = 'block'; // Make the text container visible
+// Create a new speech synthesis object
+var speech = new SpeechSynthesisUtterance(aboutText);
 
-    // Create a new speech synthesis object to read the custom text aloud
-    var speech = new SpeechSynthesisUtterance(aboutText);
+// Optional settings for the speech (rate, pitch, voice)
+speech.lang = 'en-US'; // Language
+speech.rate = 1; // Speed (1 is normal, less than 1 is slower, greater than 1 is faster)
+speech.pitch = 1; // Pitch (1 is normal, less than 1 is lower, greater than 1 is higher)
+
+// Optional: Choose a different voice (if available)
+var voices = window.speechSynthesis.getVoices();
+speech.voice = voices.find(voice => voice.name === "Google US English"); // Example voice
+if (!speech.voice) speech.voice = voices[0]; // Default to the first available voice if the selected one isn't found
+
+// Variable to track the visibility state and speech status
+var isTextVisible = false;
+var isSpeechPlaying = false;
+
+document.getElementById('about-btn').addEventListener('click', function() {
+    if (isTextVisible) {
+        // Hide the text and stop the speech
+        aboutTextContainer.style.display = 'none';
+        window.speechSynthesis.cancel(); // Stop the speech synthesis
+        isSpeechPlaying = false;
+    } else {
+        // Display the custom About Text
+        aboutTextElement.innerHTML = aboutText; // Set the inner HTML for the text
+        aboutTextContainer.style.display = 'block'; // Make the text container visible
+        
+        // Play the speech
+        window.speechSynthesis.speak(speech);
+        isSpeechPlaying = true;
+    }
     
-    // Optional settings for the speech (rate, pitch, voice)
-    speech.lang = 'en-US'; // Language
-    speech.rate = 1; // Speed (1 is normal, less than 1 is slower, greater than 1 is faster)
-    speech.pitch = 1; // Pitch (1 is normal, less than 1 is lower, greater than 1 is higher)
-    
-    // Play the speech
-    window.speechSynthesis.speak(speech);
+    // Toggle the visibility state
+    isTextVisible = !isTextVisible;
 });
-document.addEventListener("DOMContentLoaded", () => {
-    const links = document.querySelectorAll("nav ul li a");
-  
-    for (const link of links) {
-      link.addEventListener("click", smoothScroll);
-    }
-  
-    function smoothScroll(event) {
-      event.preventDefault();
-      const targetId = event.currentTarget.getAttribute("href").substring(1);
-      const targetSection = document.getElementById(targetId);
-  
-      window.scrollTo({
-        top: targetSection.offsetTop,
-        behavior: "smooth"
-      });
-    }
-  });
-  window.addEventListener('scroll', function() {
-    const buttons = document.querySelectorAll('.button-container');
-    
-    buttons.forEach(function(buttonContainer) {
-        const buttonPosition = buttonContainer.getBoundingClientRect().top;
 
-        // Check if the button container is in the viewport
-        if (buttonPosition < window.innerHeight) {
-            buttonContainer.style.opacity = 1;
-            buttonContainer.style.transform = 'translateY(0)'; // Slide the button into view
-        }
+// Ensure the voices are loaded before using them
+window.speechSynthesis.onvoiceschanged = function() {
+    // Optionally, log available voices to the console
+    const voices = window.speechSynthesis.getVoices();
+    console.log(voices); // See which voices are available in your browser
+};
+const buttons = document.querySelectorAll('.btn-1-2');
+
+// Function to add 'visible' class to buttons
+
+// Function to add 'visible' class to buttons with animation
+function showButtons() {
+    buttons.forEach(button => {
+        button.classList.add('visible');
+        button.style.animation = 'fadeIn 1s ease-in-out'; // Add animation
     });
+}
+
+// Show buttons on load
+showButtons();
+
+// Show buttons on scroll
+window.addEventListener('scroll', showButtons);
+
+// Ensure the voices are loaded before using them
+window.speechSynthesis.onvoiceschanged = function() {
+    // Optionally, log available voices to the console
+    const voices = window.speechSynthesis.getVoices();
+    console.log(voices); // See which voices are available in your browser
+};
 });

@@ -1,0 +1,127 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #e3e3e3, #f0f0f0); /* Subtle gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Ensures no scrollbars are visible */
+    box-sizing: border-box; /* Ensures padding and border don't affect layout */
+    background-size: cover; /* Makes the background cover the entire viewport */
+    color: #333; /* Dark text for contrast */
+    text-align: center; /* Centers text */
+}
+
+
+.container {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: white;
+    width: 80%;
+    max-width: 600px;
+}
+
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 32px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+.book-container {
+    margin-top: 20px;
+    display: none; /* Hidden initially */
+    text-align: center;
+}
+
+.book-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    color: #333;
+    width: 300px;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.book-cover {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.book-title {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.book-author {
+    font-size: 1.2em;
+    color: #6a11cb;
+    margin-bottom: 10px;
+}
+
+.book-synopsis {
+    font-size: 1em;
+    color: #555;
+    text-align: justify;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+h1 {
+    font-size: 2.5em;
+    color: #6a11cb;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.typing-effect {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #333; /* Cursor effect */
+    font-size: 1.2em;
+    animation: typing 2.5s steps(30) 1s 1 normal both; /* Typing animation with delay */
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.container {
+    animation: fadeIn 1s ease-in-out;
+}

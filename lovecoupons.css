@@ -1,45 +1,52 @@
 /* General Styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f6e3e3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Softer, modern font */
+  background: linear-gradient(135deg, #f6e3e3, #f9d6d6); /* Subtle pink gradient background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  color: #333; /* Darker text for better contrast */
+  transition: background-color 0.3s ease; /* Smooth transition for background */
+}
+
   
   /* Container for the coupons */
   .coupon-container {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid; /* Use grid for better control over layout */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Automatically adjust the number of columns based on screen size */
     gap: 20px;
-    justify-content: center;
-  }
-  
-  /* Individual Coupon Styles */
-  .coupon {
+    justify-items: center; /* Center the coupons within each grid cell */
+    padding: 20px;
+    max-width: 1200px; /* Ensure the container does not stretch too far */
+    margin: 0 auto; /* Center the whole container */
+}
+
+/* Individual Coupon Styles */
+.coupon {
     background-color: #f8d7db;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    height: 180px;
+    border-radius: 12px; /* Slightly rounded corners for a smoother look */
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15); /* Softer shadow for a modern feel */
+    width: 100%; /* Make the coupon width responsive */
+    height: 200px; /* Adjust height to look balanced */
     position: relative;
     font-family: 'Georgia', serif;
     overflow: hidden;
     padding: 20px;
-    transition: transform 0.3s ease;
-    border: 3px dashed #e6007f;  /* Dashed border to mimic a ticket */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transform and shadow effect */
+    border: 3px dashed #e6007f; /* Dashed border to mimic a ticket */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  }
+    text-align: center; /* Center the content */
+}
   
   .coupon:hover {
     transform: scale(1.05);

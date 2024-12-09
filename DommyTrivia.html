@@ -818,7 +818,7 @@
 <button type="button" onclick="submitAnswers()">Submit Answers</button>
 </form>
 
-<div id="results" style="display: none;">
+<div id="results" class="hidden">
     <h2>Your Score: <span id="score"></span>/50</h2>
     <p id="detailed-results"></p>
 </div>
@@ -827,8 +827,33 @@
     <iframe id="audio-player" width="640" height="60" 
         src="https://archive.org/download/JeopardyTheme/Jeopardy.mp3" 
         frameborder="0" 
+        title="Jeopardy Theme Audio"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen />
+        allowfullscreen></iframe>
+</div>
+<script>
+    function submitAnswers() {
+        const questions = document.querySelectorAll('.question');
+        let score = 0;
+        let detailedResults = '';
+
+        questions.forEach((question, index) => {
+            const selected = question.querySelector('input[type="radio"]:checked');
+            if (selected) {
+                if (selected.getAttribute('data-correct') === 'true') {
+                    score++;
+                }
+                detailedResults += `<p>Question ${index + 1}: ${selected.nextElementSibling.textContent.trim()} - ${selected.getAttribute('data-correct') === 'true' ? 'Correct' : 'Incorrect'}</p>`;
+            } else {
+                detailedResults += `<p>Question ${index + 1}: No answer selected - Incorrect</p>`;
+            }
+        });
+
+        document.getElementById('score').textContent = score;
+        document.getElementById('detailed-results').innerHTML = detailedResults;
+        document.getElementById('results').classList.remove('hidden');
+    }
+</script>
 </div>
 </div>
 <script src="dommytrivia.js"></script>

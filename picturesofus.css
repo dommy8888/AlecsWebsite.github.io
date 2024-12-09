@@ -1,0 +1,122 @@
+/* General Reset */
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1a1a1a, #3a3a3a, #1a1a1a); /* Subtle dark gradient */
+    color: white;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    background-attachment: fixed; /* Creates a parallax effect on scroll */
+}
+
+/* Optional Starry Background Animation */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('path-to-stars-image.png'); /* Replace with your starry texture or overlay image */
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+/* Add Subtle Glow Effect */
+body {
+    text-shadow: 0px 0px 4px rgba(255, 255, 255, 0.3);
+}
+
+
+/* Intro Section */
+.intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: black;
+    text-align: center;
+}
+
+.show-button {
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #007bff;
+    color: white;
+    transition: background 0.3s ease;
+}
+
+.show-button:hover {
+    background: #0056b3;
+}
+
+/* Image Container */
+.image-container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding: 50px 0;
+    width: 100%;
+}
+
+/* Picture Frame */
+.picture-frame {
+    position: relative;
+    max-width: 80%;
+    border: 8px solid white;
+    border-radius: 12px;
+    padding: 10px;
+    background-color: black;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+    text-align: center;
+}
+
+.picture-frame img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+.picture-frame h2 {
+    color: white;
+    margin-top: 10px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+/* Fade-in Effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.picture-frame {
+    opacity: 0;
+    animation: fadeIn 1.5s ease-out forwards;
+}
+
+/* Scroll Visibility */
+.picture-frame:nth-child(1) { animation-delay: 0s; }
+.picture-frame:nth-child(2) { animation-delay: 0.5s; }
+.picture-frame:nth-child(3) { animation-delay: 1s; }
+.picture-frame:nth-child(4) { animation-delay: 1.5s; }
+.picture-frame:nth-child(5) { animation-delay: 2s; }
+.picture-frame:nth-child(6) { animation-delay: 2.5s; }
+.picture-frame:nth-child(7) { animation-delay: 3s; }
+.picture-frame:nth-child(8) { animation-delay: 3.5s; }
+.picture-frame:nth-child(9) { animation-delay: 4s; }
+
+/* Hover Effect */
+.picture-frame:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}

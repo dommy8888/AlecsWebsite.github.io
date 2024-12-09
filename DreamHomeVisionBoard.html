@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Home Vision Board</title>
+    <link rel="stylesheet" href="dreamhomevisionboard.css">
+</head>
+<body>
+    <header>
+        <h1>Dream Home Vision Board</h1>
+        <p>Visualize your dream space and bring it to life!</p>
+    </header>
+    <main>
+        <section id="categories">
+            <div class="category" onclick="showCategory('living-room')">
+                <img src="images/Living-room.jpeg" alt="Living Room">
+                <h2>Living Room</h2>
+            </div>
+            <div class="category" onclick="showCategory('kitchen')">
+                <img src="images/Kitchen.jpeg" alt="Kitchen">
+                <h2>Kitchen</h2>
+            </div>
+            <div class="category" onclick="showCategory('bedroom')">
+                <img src="images/Bedroom.jpeg" alt="Bedroom">
+                <h2>Bedroom</h2>
+            </div>
+            <div class="category" onclick="showCategory('outdoor')">
+                <img src="images/Exterior.jpeg" alt="Outdoor">
+                <h2>Outdoor</h2>
+            </div>
+            <div class="category" onclick="showCategory('bathroom')">
+                <img src="images/bathroom.jpeg" alt="Bathroom">
+                <h2>Bathroom</h2>
+            </div>
+            <div class="category" onclick="showCategory('home-office')">
+                <img src="images/home-office.jpeg" alt="Home Office">
+                <h2>Home Office</h2>
+            </div>
+            <div class="category" onclick="showCategory('home-gym')">
+                <img src="images/home-gym.jpeg" alt="Home Gym">
+                <h2>Home Gym</h2>
+            </div>
+            <div class="category" onclick="showCategory('library')">
+                <img src="images/library.jpeg" alt="Library">
+                <h2>Library</h2>
+            </div>
+            <div class="category" onclick="showCategory('garden')">
+                <img src="images/garden.jpeg" alt="Garden">
+                <h2>Garden</h2>
+            </div>
+            <div class="category" onclick="showCategory('music-studio')">
+                <img src="images/music-room.jpeg" alt="Music Studio">
+                <h2>Music Studio</h2>
+            </div>
+            <div class="category" onclick="showCategory('painting-room')">
+                <img src="images/art-room.jpeg" alt="Painting Room">
+                <h2>Painting Room</h2>
+            </div>
+            <div class="category" onclick="showCategory('gentlemens-lounge')">
+                <img src="images/gentlemens-lounge.jpeg" alt="Gentlemen's Lounge">
+                <h2>Gentlemen's Lounge</h2>
+            </div>
+            <div class="category" onclick="showCategory('bar')">
+                <img src="images/bar.jpeg" alt="Bar">
+                <h2>Bar</h2>
+            </div>
+            <div class="category" onclick="showCategory('foyer')">
+                <img src="images/foyer.jpeg" alt="Foyer">
+                <h2>Foyer</h2>
+            </div>
+            <div class="category" onclick="showCategory('theatre')">
+                <img src="images/theatre.jpeg" alt="Theatre">
+                <h2>Theatre</h2>
+            </div>
+            <div class="category" onclick="showCategory('art-gallery')">
+                <img src="images/art-gallery.jpeg" alt="Art Gallery">
+                <h2>Art Gallery</h2>
+            </div>
+        </section>
+        <section id="details" class="hidden">
+            <button onclick="hideCategory()">Back</button>
+            <div id="category-content"></div>
+        </section>
+    </main>
+    <footer>
+        <p>Created with ❤️ for your dream home</p>
+    </footer>
+    <script src="dreamhomevisionboard.js"></script>
+</body>
+</html>
